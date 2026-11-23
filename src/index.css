@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Identidade da Kauffhair: cores, fontes, raios, sombra e animações viram classes do Tailwind
+   (bg-marca, text-tinta-2, rounded-painel, shadow-suave, animate-flutuar...) */
+@theme {
+  --color-fundo: #fbf8f6;
+  --color-fundo-2: #f3ebe8;
+  --color-linha: #eadfdb;
+  --color-tinta: #2b2020;
+  --color-tinta-2: #6b5a58;
+  --color-marca: #7d4e4e;
+  --color-marca-escura: #673e3e;
+  --color-rosa: #c9a09d;
+  --color-rosa-claro: #f0e2df;
+  --color-escuro: #1d1616;
+  --color-claro: #f6eeeb;
+  --color-claro-2: #c9b6b3;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: Inter, system-ui, sans-serif;
+
+  --radius-card: 20px;
+  --radius-painel: 32px;
+  --shadow-suave: 0 24px 48px -28px rgb(60 30 30 / 0.45);
+  --ease-suave: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --animate-flutuar: flutuar 6s ease-in-out infinite;
+  --animate-rolar: rolar 45s linear infinite;
+  @keyframes flutuar { 50% { translate: 0 -8px; } }
+  @keyframes rolar { to { translate: -50% 0; } }
+}
+
+/* blocos que se repetem */
+@utility wrap { max-width: 1200px; margin-inline: auto; padding-inline: clamp(20px, 4vw, 40px); }
+@utility secao { padding-block: clamp(80px, 10vw, 128px); }
+@utility painel { margin-inline: clamp(8px, 1.5vw, 16px); border-radius: var(--radius-painel); }
+@utility bg-gradiente { background-image: linear-gradient(135deg, #d8b4b0, var(--color-marca)); }
+@utility brilho-abertura { background: radial-gradient(55% 70% at 85% 15%, rgb(201 160 157 / 0.22), transparent 70%), var(--color-escuro); }
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  body { @apply bg-fundo font-sans text-tinta antialiased; font-size: 1.0625rem; line-height: 1.7; }
+  h1, h2, h3 { @apply font-serif font-normal tracking-[-0.01em]; }
+  h2 { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.12; }
+  h3 { font-size: 1.25rem; line-height: 1.3; }
+  h1 em, h2 em { color: var(--color-marca); }
+  :focus-visible { outline: 2px solid var(--color-marca); outline-offset: 3px; }
+}
+
+/* entrada suave: cada bloco com data-revela aparece uma vez (classes postas em App.tsx) */
+@keyframes surge { from { opacity: 0; translate: 0 28px; } }
+.revela { opacity: 0; }
+.revela.visto { opacity: 1; animation: surge 0.9s var(--ease-suave) var(--d, 0s) both; }
+
+/* topo ganha linha e sombra depois que a página rola */
+@supports (animation-timeline: scroll()) {
+  .topo { animation: topo linear both; animation-timeline: scroll(); animation-range: 0 160px; }
+  @keyframes topo { to { border-color: var(--color-linha); box-shadow: 0 10px 30px -24px rgb(60 30 30 / 0.5); } }
+}
+
+/* perguntas abrem e fecham com animação onde o navegador suporta */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  details::details-content { height: 0; overflow: hidden; transition: height 0.4s var(--ease-suave), content-visibility 0.4s allow-discrete; }
+  details[open]::details-content { height: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
