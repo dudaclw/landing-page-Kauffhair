@@ -43,7 +43,7 @@ export function Mechas() {
           </div>
         </div>
         {/* Galeria de loiros: entra aqui quando houver fotos de loiro de costas */}
-        <Agendar titulo="Quer um loiro assim?" texto="Agende seu horário com a Vivi pelo WhatsApp." chave="mechas" rotulo="Agendar mechas" />
+        <Agendar titulo="Quer um loiro assim?" texto="Fale com a Vivi e tire suas dúvidas pelo WhatsApp." chave="mechas" rotulo="Quero meu loiro" />
       </div>
     </section>
   )

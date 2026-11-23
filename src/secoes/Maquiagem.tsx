@@ -16,7 +16,7 @@ export function Maquiagem() {
           </div>
           <FotoGrande src="/img/maquiagem-1.jpg" alt="Cliente com maquiagem de olhos esfumados e penteado semipreso" legenda="Make e semipreso" largura={720} altura={1280} posicao="center 30%" />
         </div>
-        <Agendar titulo="Vai a um evento?" texto="Agende sua maquiagem com a equipe." chave="maquiagem" rotulo="Agendar maquiagem" />
+        <Agendar titulo="Vai a um evento?" texto="Combine a make com o seu penteado." chave="maquiagem" rotulo="Quero fazer a make" />
       </div>
     </section>
   )

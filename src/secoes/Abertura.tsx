@@ -33,7 +33,7 @@ export function Abertura() {
           </h1>
           <p className="mb-9 max-w-[460px] text-lg text-claro-2">Especialista em mechas personalizadas, penteados de evento e noivas.</p>
           <div className="flex flex-wrap gap-3 max-lg:justify-center max-[520px]:flex-col max-[520px]:self-stretch max-[520px]:[&>a]:justify-center">
-            <a className={botao('claro')} href={zap()} {...fora}><Icone nome="chat" />Agendar pelo WhatsApp</a>
+            <a className={botao('claro')} href={zap()} {...fora}><Icone nome="chat" />Falar com a Vivi</a>
             <a className={botao('linhaEscura')} href="#servicos">Ver serviços</a>
           </div>
           <ul className="mt-12 grid w-full max-w-[480px] grid-cols-3 border-t border-white/10 pt-7">

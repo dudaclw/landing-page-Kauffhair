@@ -40,7 +40,7 @@ export function Penteados() {
           ))}
         </div>
 
-        <Agendar titulo="Tem evento chegando?" texto="Garanta seu horário para o penteado." chave="penteado" rotulo="Agendar penteado" />
+        <Agendar titulo="Tem evento chegando?" texto="Garanta seu horário para o penteado." chave="penteado" rotulo="Reservar meu penteado" />
       </div>
     </section>
   )

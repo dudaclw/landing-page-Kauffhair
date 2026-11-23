@@ -41,11 +41,12 @@ export function botao(estilo: keyof typeof estilos = 'primario', pequeno = false
   return `inline-flex items-center gap-2.5 rounded-full border font-medium leading-none cursor-pointer transition duration-300 ease-suave hover:-translate-y-0.5 hover:shadow-suave [&_svg]:size-[18px] ${estilos[estilo]} ${pequeno ? 'px-5 py-[11px] text-sm' : 'px-7 py-[15px] text-[0.95rem]'}`
 }
 
-export function Logo({ assinatura }: { assinatura?: boolean }) {
+// compacto: em telas estreitas (< 375px) mostra só o "K", para caber o botão do topo
+export function Logo({ assinatura, compacto }: { assinatura?: boolean; compacto?: boolean }) {
   return (
     <a href="#" className="flex items-center gap-3">
-      <span className="grid size-10 place-items-center rounded-xl bg-gradiente font-serif text-2xl leading-none text-white">K</span>
-      <span className="grid text-left leading-tight">
+      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-gradiente font-serif text-2xl leading-none text-white">K</span>
+      <span className={`grid text-left leading-tight ${compacto ? 'max-[374px]:hidden' : ''}`}>
         <b className="font-serif text-base font-medium tracking-[0.2em]">KAUFFHAIR</b>
         {assinatura && <small className="text-xs text-tinta-2">Espaço da Beleza · Cabelo by Vivi</small>}
       </span>
