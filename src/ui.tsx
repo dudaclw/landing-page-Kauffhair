@@ -108,7 +108,7 @@ export function Foto({ src, alt, legenda, posicao, className }: {
   return (
     <figure data-revela className={`group relative isolate overflow-clip ${className || 'aspect-4/5 rounded-painel max-md:mx-auto max-md:w-full max-md:max-w-[460px]'}`}>
       <img src={src} alt={alt} loading="lazy" style={{ objectPosition: posicao }}
-        className="absolute inset-0 size-full object-cover transition-transform duration-1000 ease-suave group-hover:scale-105" />
+        className="block size-full object-cover transition-transform duration-1000 ease-suave group-hover:scale-105 md:absolute md:inset-0" />
       {legenda && <figcaption className="absolute bottom-4 left-4"><Etiqueta>{legenda}</Etiqueta></figcaption>}
     </figure>
   )

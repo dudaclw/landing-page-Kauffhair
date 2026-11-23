@@ -13,9 +13,9 @@ export function Servicos() {
           {servicos.map((s) => (
             <article key={s.titulo} data-revela
               className="group isolate flex flex-col overflow-clip rounded-card border border-linha bg-white transition duration-300 ease-suave hover:border-rosa hover:shadow-suave hover:[transform:translateY(-6px)]">
-              <a href={s.ancora} tabIndex={-1} className="relative aspect-square overflow-clip md:aspect-4/5">
+              <a href={s.ancora} tabIndex={-1} className="relative aspect-square min-h-0 overflow-clip md:aspect-4/5">
                 <img src={s.foto} alt="" loading="lazy" style={{ objectPosition: s.posicao }}
-                  className="absolute inset-0 size-full object-cover transition-transform duration-1000 ease-suave group-hover:scale-105" />
+                  className="block size-full object-cover transition-transform duration-1000 ease-suave group-hover:scale-105 md:absolute md:inset-0" />
               </a>
               <div className="flex flex-1 flex-col gap-2 p-3.5 md:p-5">
                 <h3 className="text-[1.05rem] leading-tight md:text-[1.3rem]">{s.titulo}</h3>

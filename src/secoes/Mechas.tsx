@@ -1,16 +1,38 @@
+import { useState } from 'react'
 import { loiros } from '../dados'
-import { Agendar, Cabecalho, Diferencial, Foto } from '../ui'
+import { Agendar, Cabecalho, Diferencial, Etiqueta, Foto, Icone } from '../ui'
+
+// Arraste para comparar: o "antes" fica por cima e é recortado até a posição da barra.
+// O "depois" fica no fluxo (não absoluto) para a moldura ter altura própria também no iPhone.
+function Comparador() {
+  const [pos, setPos] = useState(50)
+  const foto = 'size-full object-cover object-[center_55%]'
+  return (
+    <figure data-revela className="relative isolate aspect-4/5 overflow-clip rounded-painel shadow-suave select-none has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-4 has-[input:focus-visible]:outline-marca max-md:mx-auto max-md:w-full max-md:max-w-[460px]">
+      <img src="/img/mechas-depois.jpg" alt="Depois: loiro iluminado e uniforme, do bege ao platinado" className={`block ${foto}`} />
+      <img src="/img/mechas-antes.jpg" alt="Antes: raiz escura e loiro irregular nas pontas" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }} className={`absolute inset-0 ${foto}`} />
+      <span className="pointer-events-none absolute inset-y-0 w-0.5 -translate-x-px bg-white" style={{ left: `${pos}%` }} />
+      <span className="pointer-events-none absolute top-1/2 flex size-13 -translate-1/2 items-center justify-center rounded-full bg-white text-marca shadow-suave" style={{ left: `${pos}%` }}>
+        <Icone nome="esq" className="-mx-[3px] size-[18px]" /><Icone nome="dir" className="-mx-[3px] size-[18px]" />
+      </span>
+      <Etiqueta className="absolute bottom-[18px] left-[18px]">Antes</Etiqueta>
+      <Etiqueta className="absolute right-[18px] bottom-[18px]">Depois</Etiqueta>
+      <input type="range" value={pos} onChange={(e) => setPos(Number(e.target.value))} aria-label="Comparar antes e depois"
+        className="absolute inset-0 size-full cursor-ew-resize touch-pan-y opacity-0" />
+    </figure>
+  )
+}
 
 export function Mechas() {
   return (
     <section id="mechas" className="secao">
       <div className="wrap">
         <div className="grid items-center gap-[clamp(40px,6vw,80px)] md:grid-cols-2">
-          {/* loiros feitos pela Vivi: o trabalho vem primeiro */}
-          <div className="grid grid-cols-2 gap-3 md:gap-5">
-            {loiros.map((l) => (
-              <Foto key={l.foto} src={l.foto} alt={l.alt} className="aspect-3/4 rounded-card" />
-            ))}
+          <div>
+            <Comparador />
+            <p className="mt-4 flex items-center justify-center gap-2 text-[0.85rem] text-tinta-2 md:justify-start">
+              <Icone nome="esq" className="size-4" />Arraste para comparar o antes e o depois<Icone nome="dir" className="size-4" />
+            </p>
           </div>
           <div>
             <Cabecalho etiqueta="Mechas personalizadas" titulo={<>Cada detalhe importa quando o objetivo é um <em>loiro exclusivo</em>.</>}
@@ -21,6 +43,12 @@ export function Mechas() {
               <Diferencial icone="brilho" titulo="Resultado exclusivo" texto="Cada loiro é único, como quem o usa." />
             </div>
           </div>
+        </div>
+        {/* galeria de loiros: retrato no celular, faixa mais baixa no computador */}
+        <div className="mt-[clamp(40px,6vw,64px)] grid grid-cols-2 gap-3 md:gap-5">
+          {loiros.map((l) => (
+            <Foto key={l.foto} src={l.foto} alt={l.alt} className="aspect-3/4 rounded-card md:aspect-[4/3]" />
+          ))}
         </div>
         <Agendar titulo="Quer um loiro assim?" texto="Fale com a Vivi e tire suas dúvidas pelo WhatsApp." chave="mechas" rotulo="Quero meu loiro" />
       </div>
