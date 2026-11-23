@@ -1,5 +1,5 @@
 // Conteúdo da página num lugar só: WhatsApp, serviços, penteados e perguntas.
-// Fotos ficam em public/img (versões de 1080px tiradas do Instagram público).
+// Fotos ficam em public/img (do Instagram público e enviadas pela cliente).
 
 // WhatsApp da Kauffhair (+55 45 99948-9990)
 export const WHATSAPP = '5545999489990'
@@ -23,9 +23,15 @@ export function zap(chave?: Chave) {
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`
 }
 
-// Fotos do antes e depois (comparador e card de Mechas). Vazio = placeholder em degradê.
+// Fotos do antes e depois (comparador de Mechas). Vazio = placeholder em degradê.
 // Quando chegarem fotos boas: colocar em public/img e preencher, ex.: antes: '/img/mechas-antes.jpg'
-export const antesDepois = { antes: '', depois: '', montagem: '' }
+export const antesDepois = { antes: '', depois: '' }
+
+// Loiros feitos pela Vivi (galeria em Mechas)
+export const loiros = [
+  { foto: '/img/mechas-1.jpg', alt: 'Loiro iluminado com raiz esfumada e pontas claras em ondas' },
+  { foto: '/img/mechas-2.jpg', alt: 'Mechas loiras finas e uniformes em cabelo liso' },
+]
 
 export const INSTAGRAM = 'https://www.instagram.com/kauffhair/'
 export const fora = { target: '_blank', rel: 'noopener' } as const
@@ -43,9 +49,9 @@ export const faixa = ['Mechas personalizadas', 'Noivas', 'Penteados de festa', '
 
 // Serviços com foto do trabalho. "posicao" escolhe que parte da foto aparece no recorte do card.
 export const servicos = [
-  { titulo: 'Mechas personalizadas', texto: 'Loiros exclusivos, iluminados e uniformes, do bege perolado ao platinado.', chave: 'mechas', ancora: '#mechas', foto: antesDepois.montagem, posicao: 'center 30%', legenda: 'Antes e depois' },
-  { titulo: 'Noivas', texto: 'Cabelo e maquiagem para o grande dia, com prova antes.', chave: 'noivas', ancora: '#noivas', foto: '/img/noiva-1.jpg', posicao: 'center 25%' },
-  { titulo: 'Penteados', texto: 'Para formaturas, madrinhas, debutantes e festas.', chave: 'penteado', ancora: '#penteados', foto: '/img/penteado-1.jpg', posicao: 'center 60%' },
+  { titulo: 'Mechas personalizadas', texto: 'Loiros exclusivos, iluminados e uniformes, do bege perolado ao platinado.', chave: 'mechas', ancora: '#mechas', foto: '/img/mechas-2.jpg', posicao: 'center 40%' },
+  { titulo: 'Noivas', texto: 'Cabelo e maquiagem para o grande dia, com prova antes.', chave: 'noivas', ancora: '#noivas', foto: '/img/noiva-7.jpg', posicao: 'center 15%' },
+  { titulo: 'Penteados', texto: 'Para formaturas, madrinhas, debutantes e festas.', chave: 'penteado', ancora: '#penteados', foto: '/img/penteado-1.jpg', posicao: 'center 85%' },
   { titulo: 'Maquiagem', texto: 'Com a equipe Dyo, Kari e Sthe, em harmonia com o penteado.', chave: 'maquiagem', ancora: '#maquiagem', foto: '/img/maquiagem-1.jpg', posicao: 'center 30%' },
 ] as const
 
@@ -57,9 +63,13 @@ export const outrosServicos = [
 
 export const penteados = [
   { foto: '/img/penteado-1.jpg', alt: 'Coque baixo com tranças e grampos dourados de pérola', titulo: 'Coque baixo com tranças', texto: 'Grampos de pérola e acabamento romântico' },
-  { foto: '/img/penteado-2.jpg', alt: 'Coque alto texturizado', titulo: 'Coque alto', texto: 'Elegante e firme a festa toda' },
+  { foto: '/img/penteado-7.jpg', alt: 'Semipreso com trança bolha no centro e ondas longas', titulo: 'Semipreso trançado', texto: 'Trança bolha com ondas longas' },
   { foto: '/img/penteado-3.jpg', alt: 'Ondas soltas e naturais', titulo: 'Ondas soltas', texto: 'Natural e sofisticado' },
+  { foto: '/img/penteado-2.jpg', alt: 'Coque alto torcido', titulo: 'Coque alto', texto: 'Elegante e firme a festa toda' },
+  { foto: '/img/penteado-8.jpg', alt: 'Noiva de costas com coque torcido e arranjo de flores e pérolas', titulo: 'Coque de noiva', texto: 'Torcido, com arranjo de pérolas' },
   { foto: '/img/penteado-4.jpg', alt: 'Cachos definidos com mechas iluminadas', titulo: 'Cachos definidos', texto: 'Volume, textura e brilho' },
+  { foto: '/img/penteado-5.jpg', alt: 'Coque alto volumoso com um cacho solto ao lado do rosto', titulo: 'Coque volumoso', texto: 'Com um cacho solto emoldurando o rosto' },
+  { foto: '/img/penteado-6.jpg', alt: 'Cabelo longo com cachos definidos', titulo: 'Cachos longos', texto: 'Definidos, com volume e movimento' },
 ]
 
 // confirmar as respostas com a cliente

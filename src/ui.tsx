@@ -44,8 +44,9 @@ export function botao(estilo: keyof typeof estilos = 'primario', pequeno = false
 // compacto: em telas estreitas (< 375px) mostra só o "K", para caber o botão do topo
 export function Logo({ assinatura, compacto }: { assinatura?: boolean; compacto?: boolean }) {
   return (
-    <a href="#" className="flex items-center gap-3">
-      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-gradiente font-serif text-2xl leading-none text-white">K</span>
+    <a href="#" aria-label="Kauffhair, voltar ao início" className="flex items-center gap-3">
+      {/* quadrado rosé com o K, recortado do logo da cliente */}
+      <img src="/img/logo.png" alt="" width={174} height={160} className="h-10 w-auto shrink-0 rounded-md" />
       <span className={`grid text-left leading-tight ${compacto ? 'max-[374px]:hidden' : ''}`}>
         <b className="font-serif text-base font-medium tracking-[0.2em]">KAUFFHAIR</b>
         {assinatura && <small className="text-xs text-tinta-2">Espaço da Beleza · Cabelo by Vivi</small>}
@@ -100,15 +101,15 @@ export function Diferencial({ icone, titulo, texto }: { icone: NomeIcone; titulo
   )
 }
 
-// Foto grande arredondada com legenda (Noivas e Maquiagem)
-export function FotoGrande({ src, alt, legenda, largura, altura, posicao }: {
-  src: string; alt: string; legenda: string; largura: number; altura: number; posicao?: string
+// Foto arredondada com legenda. Padrão: retrato grande (Noivas e Maquiagem); className troca o formato (galerias).
+export function Foto({ src, alt, legenda, posicao, className }: {
+  src: string; alt: string; legenda?: string; posicao?: string; className?: string
 }) {
   return (
-    <figure data-revela className="group relative isolate aspect-4/5 overflow-clip rounded-painel max-md:mx-auto max-md:w-full max-md:max-w-[460px]">
-      <img src={src} alt={alt} width={largura} height={altura} loading="lazy" style={{ objectPosition: posicao }}
-        className="size-full object-cover transition-transform duration-1000 ease-suave group-hover:scale-105" />
-      <figcaption className="absolute bottom-4 left-4"><Etiqueta>{legenda}</Etiqueta></figcaption>
+    <figure data-revela className={`group relative isolate overflow-clip ${className || 'aspect-4/5 rounded-painel max-md:mx-auto max-md:w-full max-md:max-w-[460px]'}`}>
+      <img src={src} alt={alt} loading="lazy" style={{ objectPosition: posicao }}
+        className="absolute inset-0 size-full object-cover transition-transform duration-1000 ease-suave group-hover:scale-105" />
+      {legenda && <figcaption className="absolute bottom-4 left-4"><Etiqueta>{legenda}</Etiqueta></figcaption>}
     </figure>
   )
 }

@@ -1,13 +1,10 @@
-import { Cabecalho, Chip } from '../ui'
+import { Cabecalho, Chip, Foto } from '../ui'
 
 export function Sobre() {
   return (
     <section id="sobre" className="secao">
       <div className="wrap grid items-center gap-[clamp(40px,6vw,80px)] md:grid-cols-2">
-        {/* trocar pelo retrato da Vivi: <img src="/img/vivi.jpg" alt="Vivi, à frente da Kauffhair" className="aspect-4/5 rounded-painel object-cover" /> */}
-        <div data-revela aria-hidden="true" className="grid aspect-4/5 place-items-center rounded-painel bg-gradiente font-serif text-[clamp(7rem,16vw,11rem)] leading-none text-white/92 max-md:mx-auto max-md:w-full max-md:max-w-[460px]">
-          K
-        </div>
+        <Foto src="/img/vivi.jpg" alt="Vivi, à frente da Kauffhair, sorrindo de vestido preto" />
         <div>
           <Cabecalho etiqueta="Quem faz" titulo={<>Prazer, eu sou a <em>Vivi</em>.</>}
             apoio="Especialista em mechas personalizadas e penteados para eventos. Para mim, a verdadeira transformação está nos detalhes: na cor que combina com você e no penteado que acompanha a festa inteira." />

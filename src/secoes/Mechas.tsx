@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { antesDepois } from '../dados'
-import { Agendar, Cabecalho, Diferencial, Etiqueta, Icone } from '../ui'
+import { antesDepois, loiros } from '../dados'
+import { Agendar, Cabecalho, Diferencial, Etiqueta, Foto, Icone } from '../ui'
 
 // Arraste para comparar: o "antes" é recortado até a posição da barra.
 // Sem foto em dados.ts, cada lado mostra um degradê (placeholder).
@@ -49,7 +49,12 @@ export function Mechas() {
             </div>
           </div>
         </div>
-        {/* Galeria de loiros: entra aqui quando houver fotos de loiro de costas */}
+        {/* galeria de loiros: retrato no celular, faixa mais baixa no computador */}
+        <div className="mt-[clamp(40px,6vw,64px)] grid grid-cols-2 gap-3 md:gap-5">
+          {loiros.map((l) => (
+            <Foto key={l.foto} src={l.foto} alt={l.alt} className="aspect-3/4 rounded-card md:aspect-[4/3]" />
+          ))}
+        </div>
         <Agendar titulo="Quer um loiro assim?" texto="Fale com a Vivi e tire suas dúvidas pelo WhatsApp." chave="mechas" rotulo="Quero meu loiro" />
       </div>
     </section>

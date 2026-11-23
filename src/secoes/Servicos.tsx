@@ -1,5 +1,5 @@
 import { servicos, outrosServicos, zap, fora } from '../dados'
-import { Cabecalho, Etiqueta, Icone, botao } from '../ui'
+import { Cabecalho, Icone, botao } from '../ui'
 
 export function Servicos() {
   return (
@@ -14,14 +14,8 @@ export function Servicos() {
             <article key={s.titulo} data-revela
               className="group isolate flex flex-col overflow-clip rounded-card border border-linha bg-white transition duration-300 ease-suave hover:border-rosa hover:shadow-suave hover:[transform:translateY(-6px)]">
               <a href={s.ancora} tabIndex={-1} className="relative aspect-square overflow-clip md:aspect-4/5">
-                {s.foto ? (
-                  <img src={s.foto} alt="" loading="lazy" style={{ objectPosition: s.posicao }}
-                    className="absolute inset-0 size-full object-cover transition-transform duration-1000 ease-suave group-hover:scale-105" />
-                ) : (
-                  // placeholder do antes e depois: metade escura, metade loira
-                  <div className="absolute inset-0 flex"><div className="tom-antes w-1/2" /><div className="tom-depois w-1/2" /></div>
-                )}
-                {'legenda' in s && <Etiqueta className="absolute bottom-2.5 left-2.5 max-md:px-2.5 max-md:py-1.5 max-md:text-[0.7rem]">{s.legenda}</Etiqueta>}
+                <img src={s.foto} alt="" loading="lazy" style={{ objectPosition: s.posicao }}
+                  className="absolute inset-0 size-full object-cover transition-transform duration-1000 ease-suave group-hover:scale-105" />
               </a>
               <div className="flex flex-1 flex-col gap-2 p-3.5 md:p-5">
                 <h3 className="text-[1.05rem] leading-tight md:text-[1.3rem]">{s.titulo}</h3>

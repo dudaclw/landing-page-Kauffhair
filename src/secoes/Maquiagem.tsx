@@ -1,4 +1,4 @@
-import { Agendar, Cabecalho, Diferencial, FotoGrande } from '../ui'
+import { Agendar, Cabecalho, Diferencial, Foto } from '../ui'
 
 export function Maquiagem() {
   return (
@@ -14,7 +14,7 @@ export function Maquiagem() {
               <Diferencial icone="anel" titulo="Noivas e madrinhas" texto="Pensada para o grande dia e para as fotos." />
             </div>
           </div>
-          <FotoGrande src="/img/maquiagem-1.jpg" alt="Cliente com maquiagem de olhos esfumados e penteado semipreso" legenda="Make e semipreso" largura={720} altura={1280} posicao="center 30%" />
+          <Foto src="/img/maquiagem-1.jpg" alt="Cliente com maquiagem de olhos esfumados e penteado semipreso" legenda="Make e semipreso" posicao="center 30%" />
         </div>
         <Agendar titulo="Vai a um evento?" texto="Combine a make com o seu penteado." chave="maquiagem" rotulo="Quero fazer a make" />
       </div>
