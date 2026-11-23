@@ -23,10 +23,6 @@ export function zap(chave?: Chave) {
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`
 }
 
-// Fotos do antes e depois (comparador de Mechas). Vazio = placeholder em degradê.
-// Quando chegarem fotos boas: colocar em public/img e preencher, ex.: antes: '/img/mechas-antes.jpg'
-export const antesDepois = { antes: '', depois: '' }
-
 // Loiros feitos pela Vivi (galeria em Mechas)
 export const loiros = [
   { foto: '/img/mechas-1.jpg', alt: 'Loiro iluminado com raiz esfumada e pontas claras em ondas' },

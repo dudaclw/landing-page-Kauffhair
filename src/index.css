@@ -35,9 +35,6 @@
 @utility secao { padding-block: clamp(80px, 10vw, 128px); }
 @utility painel { margin-inline: clamp(8px, 1.5vw, 16px); border-radius: var(--radius-painel); }
 @utility bg-gradiente { background-image: linear-gradient(135deg, #d8b4b0, var(--color-marca)); }
-/* placeholders do antes e depois enquanto não há fotos boas: tom escuro (antes) e loiro (depois) */
-@utility tom-antes { background: linear-gradient(160deg, #8a5757, #2f2020); }
-@utility tom-depois { background: linear-gradient(160deg, #f4e6d4, #d6b48a); }
 @utility brilho-abertura { background: radial-gradient(55% 70% at 85% 15%, rgb(201 160 157 / 0.22), transparent 70%), var(--color-escuro); }
 
 @layer base {
