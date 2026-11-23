@@ -1,14 +1,21 @@
 import { useState } from 'react'
+import { antesDepois } from '../dados'
 import { Agendar, Cabecalho, Diferencial, Etiqueta, Icone } from '../ui'
 
-// Arraste para comparar: a foto "antes" é recortada até a posição da barra
+// Arraste para comparar: o "antes" é recortado até a posição da barra.
+// Sem foto em dados.ts, cada lado mostra um degradê (placeholder).
 function Comparador() {
   const [pos, setPos] = useState(50)
+  const recorte = { clipPath: `inset(0 ${100 - pos}% 0 0)` }
+  const { antes, depois } = antesDepois
   return (
     <figure data-revela className="relative isolate aspect-4/5 overflow-clip rounded-painel shadow-suave select-none has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-4 has-[input:focus-visible]:outline-marca max-md:mx-auto max-md:w-full max-md:max-w-[460px]">
-      <img src="/img/mechas-depois.jpg" alt="Depois: loiro iluminado e uniforme" width={440} height={550} className="absolute inset-0 size-full object-cover object-top" />
-      <img src="/img/mechas-antes.jpg" alt="Antes: mechas antigas com raiz escura" width={440} height={550} style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
-        className="absolute inset-0 size-full object-cover object-top" />
+      {depois
+        ? <img src={depois} alt="Depois: loiro iluminado e uniforme" className="absolute inset-0 size-full object-cover object-top" />
+        : <div className="tom-depois absolute inset-0" />}
+      {antes
+        ? <img src={antes} alt="Antes" style={recorte} className="absolute inset-0 size-full object-cover object-top" />
+        : <div className="tom-antes absolute inset-0" style={recorte} />}
       <span className="pointer-events-none absolute inset-y-0 w-0.5 -translate-x-px bg-white" style={{ left: `${pos}%` }} />
       <span className="pointer-events-none absolute top-1/2 flex size-13 -translate-1/2 items-center justify-center rounded-full bg-white text-marca shadow-suave" style={{ left: `${pos}%` }}>
         <Icone nome="esq" className="-mx-[3px] size-[18px]" /><Icone nome="dir" className="-mx-[3px] size-[18px]" />

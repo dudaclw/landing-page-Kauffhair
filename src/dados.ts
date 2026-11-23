@@ -23,6 +23,10 @@ export function zap(chave?: Chave) {
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`
 }
 
+// Fotos do antes e depois (comparador e card de Mechas). Vazio = placeholder em degradê.
+// Quando chegarem fotos boas: colocar em public/img e preencher, ex.: antes: '/img/mechas-antes.jpg'
+export const antesDepois = { antes: '', depois: '', montagem: '' }
+
 export const INSTAGRAM = 'https://www.instagram.com/kauffhair/'
 export const fora = { target: '_blank', rel: 'noopener' } as const
 
@@ -39,7 +43,7 @@ export const faixa = ['Mechas personalizadas', 'Noivas', 'Penteados de festa', '
 
 // Serviços com foto do trabalho. "posicao" escolhe que parte da foto aparece no recorte do card.
 export const servicos = [
-  { titulo: 'Mechas personalizadas', texto: 'Loiros exclusivos, iluminados e uniformes, do bege perolado ao platinado.', chave: 'mechas', ancora: '#mechas', foto: '/img/mechas-antes-depois.jpg', posicao: 'center 30%', legenda: 'Antes e depois' },
+  { titulo: 'Mechas personalizadas', texto: 'Loiros exclusivos, iluminados e uniformes, do bege perolado ao platinado.', chave: 'mechas', ancora: '#mechas', foto: antesDepois.montagem, posicao: 'center 30%', legenda: 'Antes e depois' },
   { titulo: 'Noivas', texto: 'Cabelo e maquiagem para o grande dia, com prova antes.', chave: 'noivas', ancora: '#noivas', foto: '/img/noiva-1.jpg', posicao: 'center 25%' },
   { titulo: 'Penteados', texto: 'Para formaturas, madrinhas, debutantes e festas.', chave: 'penteado', ancora: '#penteados', foto: '/img/penteado-1.jpg', posicao: 'center 60%' },
   { titulo: 'Maquiagem', texto: 'Com a equipe Dyo, Kari e Sthe, em harmonia com o penteado.', chave: 'maquiagem', ancora: '#maquiagem', foto: '/img/maquiagem-1.jpg', posicao: 'center 30%' },
