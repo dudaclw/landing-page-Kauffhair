@@ -13,7 +13,7 @@ export function Sobre() {
             <Chip icone="gota">Especialista em mechas</Chip>
             <Chip icone="onda">Penteados de evento</Chip>
             <Chip icone="anel">Noivas</Chip>
-            <Chip icone="batom">Maquiagem com Dyo, Kari e Sthe</Chip>
+            <Chip icone="batom">Maquiagem com Dyo e Karina</Chip>
             <Chip icone="olhar">Sobrancelhas e cílios com a Indianara</Chip>
           </div>
           <p className="mt-7 font-serif text-2xl italic text-marca">Cabelo by Vivi</p>

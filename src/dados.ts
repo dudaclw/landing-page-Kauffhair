@@ -11,6 +11,7 @@ const INTERESSE = {
   maquiagem: 'por maquiagem',
   corte: 'por corte',
   sobrancelha: 'pelos serviços de sobrancelha e cílios com a Indianara',
+  bronze: 'pelo Bronze Orgânico com a Indianara',
 }
 export type Chave = keyof typeof INTERESSE | 'duvida'
 
@@ -48,7 +49,7 @@ export const servicos = [
   { titulo: 'Mechas personalizadas', texto: 'Loiros exclusivos, iluminados e uniformes, do bege perolado ao platinado.', chave: 'mechas', ancora: '#mechas', foto: '/img/mechas-2.jpg', posicao: 'center 40%' },
   { titulo: 'Noivas', texto: 'Cabelo e maquiagem para o grande dia, com prova antes.', chave: 'noivas', ancora: '#noivas', foto: '/img/noiva-7.jpg', posicao: 'center 15%' },
   { titulo: 'Penteados', texto: 'Para formaturas, madrinhas, debutantes e festas.', chave: 'penteado', ancora: '#penteados', foto: '/img/penteado-1.jpg', posicao: 'center 85%' },
-  { titulo: 'Maquiagem', texto: 'Com a equipe Dyo, Kari e Sthe, em harmonia com o penteado.', chave: 'maquiagem', ancora: '#maquiagem', foto: '/img/maquiagem-1.jpg', posicao: 'center 30%' },
+  { titulo: 'Maquiagem', texto: 'Com a Dyo e a Karina, em harmonia com o penteado.', chave: 'maquiagem', ancora: '#maquiagem', foto: '/img/maquiagem-1.jpg', posicao: 'center 30%' },
   { titulo: 'Sobrancelhas e cílios', texto: 'Design, brow lamination, extensão de cílios e lash lifting com a Indianara.', chave: 'sobrancelha', ancora: '#sobrancelhas', foto: '/img/sobrancelha-2.jpg', posicao: '60% center' },
 ] as const
 
@@ -57,12 +58,18 @@ export const outrosServicos = [
   { titulo: 'Cortes', texto: 'Que valorizam o seu formato e a sua cor.', chave: 'corte', icone: 'tesoura' },
 ] as const
 
-// Makes da Dyo (galeria em Maquiagem). A última foto é a própria Dyo.
-export const makes = [
-  { foto: '/img/maquiagem-2.jpg', alt: 'Make com sombra rosada, delineado gatinho e pérolas acima dos olhos, com semipreso em cachos', posicao: 'center 20%' },
-  { foto: '/img/maquiagem-3.jpg', alt: 'Noiva maquiada e sorrindo entre duas convidadas, diante de um arco de folhas', posicao: 'center 15%' },
-  { foto: '/img/maquiagem-4.jpg', alt: 'Make com cílios marcados, pontos de brilho no canto dos olhos e batom com gloss', posicao: 'center 40%' },
-  { foto: '/img/dyo.jpg', alt: 'Dyo, maquiadora da equipe, com sombra rosa e brilho nos olhos', posicao: 'center 20%', legenda: 'Dyo' },
+// Maquiadoras: cada uma com o retrato (cartão) e as próprias makes (galeria em Maquiagem)
+export const maquiadoras = [
+  { nome: 'Dyo', foto: '/img/dyo.jpg', posicao: 'center 20%', makes: [
+    { foto: '/img/maquiagem-2.jpg', alt: 'Make com sombra rosada, delineado gatinho e pérolas acima dos olhos, com semipreso em cachos', posicao: 'center 20%' },
+    { foto: '/img/maquiagem-3.jpg', alt: 'Noiva maquiada e sorrindo entre duas convidadas, diante de um arco de folhas', posicao: 'center 15%' },
+    { foto: '/img/maquiagem-4.jpg', alt: 'Make com cílios marcados, pontos de brilho no canto dos olhos e batom com gloss', posicao: 'center 40%' },
+  ] },
+  { nome: 'Karina', foto: '/img/karina.jpg', posicao: 'center 25%', makes: [
+    { foto: '/img/karina-1.jpg', alt: 'Make com sombra esfumada em tons de cobre, cílios marcados e batom nude acastanhado', posicao: 'center 30%' },
+    { foto: '/img/karina-2.jpg', alt: 'Make com delineado gatinho, lápis azul na linha d\'água e pontos de brilho', posicao: 'center 35%' },
+    { foto: '/img/karina-3.jpg', alt: 'Make com olhos esfumados em marrom, pele iluminada e batom rosado', posicao: 'center 30%' },
+  ] },
 ]
 
 // Trabalhos da Indianara (galeria em Sobrancelhas e cílios)

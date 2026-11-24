@@ -7,6 +7,7 @@ import { Noivas } from './secoes/Noivas'
 import { Penteados } from './secoes/Penteados'
 import { Maquiagem } from './secoes/Maquiagem'
 import { Sobrancelhas } from './secoes/Sobrancelhas'
+import { Bronze } from './secoes/Bronze'
 import { Sobre } from './secoes/Sobre'
 import { Perguntas } from './secoes/Perguntas'
 import { Rodape } from './secoes/Rodape'
@@ -42,6 +43,7 @@ export default function App() {
         <Penteados />
         <Maquiagem />
         <Sobrancelhas />
+        <Bronze />
         <Sobre />
         <Perguntas />
       </main>

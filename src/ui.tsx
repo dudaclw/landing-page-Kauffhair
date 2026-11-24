@@ -91,6 +91,16 @@ export function Chip({ children, icone }: { children: ReactNode; icone?: NomeIco
   )
 }
 
+// Quem faz o serviço: foto redonda, nome e especialidade (cada profissional com a sua área)
+export function Profissional({ foto, nome, papel, posicao }: { foto: string; nome: string; papel: string; posicao?: string }) {
+  return (
+    <div className="mt-2 inline-flex items-center gap-3 rounded-full border border-linha bg-white py-2 pr-6 pl-2">
+      <img src={foto} alt={nome} loading="lazy" style={{ objectPosition: posicao }} className="size-14 rounded-full object-cover" />
+      <p className="leading-tight"><span className="block font-serif text-lg">{nome}</span><span className="text-sm text-tinta-2">{papel}</span></p>
+    </div>
+  )
+}
+
 // Diferencial com ícone (usado em Mechas e Maquiagem)
 export function Diferencial({ icone, titulo, texto }: { icone: NomeIcone; titulo: string; texto: string }) {
   return (
