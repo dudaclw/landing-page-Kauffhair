@@ -10,7 +10,7 @@ const INTERESSE = {
   penteado: 'por penteado',
   maquiagem: 'por maquiagem',
   corte: 'por corte',
-  sobrancelha: 'pelo design de sobrancelhas',
+  sobrancelha: 'pelos serviços de sobrancelha e cílios com a Indianara',
 }
 export type Chave = keyof typeof INTERESSE | 'duvida'
 
@@ -41,7 +41,7 @@ export const menu = [
   ['#sobre', 'Sobre'],
 ] as const
 
-export const faixa = ['Mechas personalizadas', 'Noivas', 'Penteados de festa', 'Maquiagem', 'Cortes', 'Design de sobrancelhas']
+export const faixa = ['Mechas personalizadas', 'Noivas', 'Penteados de festa', 'Maquiagem', 'Sobrancelhas e cílios', 'Bronzeamento orgânico', 'Cortes']
 
 // Serviços com foto do trabalho. "posicao" escolhe que parte da foto aparece no recorte do card.
 export const servicos = [
@@ -49,13 +49,29 @@ export const servicos = [
   { titulo: 'Noivas', texto: 'Cabelo e maquiagem para o grande dia, com prova antes.', chave: 'noivas', ancora: '#noivas', foto: '/img/noiva-7.jpg', posicao: 'center 15%' },
   { titulo: 'Penteados', texto: 'Para formaturas, madrinhas, debutantes e festas.', chave: 'penteado', ancora: '#penteados', foto: '/img/penteado-1.jpg', posicao: 'center 85%' },
   { titulo: 'Maquiagem', texto: 'Com a equipe Dyo, Kari e Sthe, em harmonia com o penteado.', chave: 'maquiagem', ancora: '#maquiagem', foto: '/img/maquiagem-1.jpg', posicao: 'center 30%' },
+  { titulo: 'Sobrancelhas e cílios', texto: 'Design, brow lamination, extensão de cílios e lash lifting com a Indianara.', chave: 'sobrancelha', ancora: '#sobrancelhas', foto: '/img/sobrancelha-2.jpg', posicao: '60% center' },
 ] as const
 
-// Ainda sem foto: aparecem numa linha "Também fazemos". Quando chegarem fotos, mover para a lista acima.
+// Ainda sem foto: entram na mesma grade com um ícone no lugar da foto. Quando chegarem fotos, mover para a lista acima.
 export const outrosServicos = [
   { titulo: 'Cortes', texto: 'Que valorizam o seu formato e a sua cor.', chave: 'corte', icone: 'tesoura' },
-  { titulo: 'Design de sobrancelhas', texto: 'O acabamento que emoldura o olhar.', chave: 'sobrancelha', icone: 'olhar' },
 ] as const
+
+// Makes da Dyo (galeria em Maquiagem). A última foto é a própria Dyo.
+export const makes = [
+  { foto: '/img/maquiagem-2.jpg', alt: 'Make com sombra rosada, delineado gatinho e pérolas acima dos olhos, com semipreso em cachos', posicao: 'center 20%' },
+  { foto: '/img/maquiagem-3.jpg', alt: 'Noiva maquiada e sorrindo entre duas convidadas, diante de um arco de folhas', posicao: 'center 15%' },
+  { foto: '/img/maquiagem-4.jpg', alt: 'Make com cílios marcados, pontos de brilho no canto dos olhos e batom com gloss', posicao: 'center 40%' },
+  { foto: '/img/dyo.jpg', alt: 'Dyo, maquiadora da equipe, com sombra rosa e brilho nos olhos', posicao: 'center 20%', legenda: 'Dyo' },
+]
+
+// Trabalhos da Indianara (galeria em Sobrancelhas e cílios)
+export const olhares = [
+  { foto: '/img/sobrancelha-3.jpg', alt: 'Antes e depois do lash lifting: cílios retos em cima, curvados e alongados embaixo' },
+  { foto: '/img/sobrancelha-2.jpg', alt: 'Sobrancelha desenhada e extensão de cílios volumosa', posicao: '60% center' },
+  { foto: '/img/sobrancelha-5.jpg', alt: 'Antes e depois de brow lamination e lash lifting: fios da sobrancelha alinhados e cílios curvados', posicao: '60% center' },
+  { foto: '/img/sobrancelha-4.jpg', alt: 'Cliente sorrindo com as sobrancelhas desenhadas e alinhadas' },
+]
 
 export const penteados = [
   { foto: '/img/penteado-1.jpg', alt: 'Coque baixo com tranças e grampos dourados de pérola', titulo: 'Coque baixo com tranças', texto: 'Grampos de pérola e acabamento romântico' },

@@ -1,3 +1,4 @@
+import { makes } from '../dados'
 import { Agendar, Cabecalho, Diferencial, Foto } from '../ui'
 
 export function Maquiagem() {
@@ -15,6 +16,12 @@ export function Maquiagem() {
             </div>
           </div>
           <Foto src="/img/maquiagem-1.jpg" alt="Cliente com maquiagem de olhos esfumados e penteado semipreso" legenda="Make e semipreso" posicao="center 30%" />
+        </div>
+        {/* makes da Dyo; a última foto é a própria Dyo */}
+        <div className="mt-[clamp(40px,6vw,64px)] grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+          {makes.map((m) => (
+            <Foto key={m.foto} src={m.foto} alt={m.alt} legenda={m.legenda} posicao={m.posicao} className="aspect-3/4 rounded-card" />
+          ))}
         </div>
         <Agendar titulo="Vai a um evento?" texto="Combine a make com o seu penteado." chave="maquiagem" rotulo="Quero fazer a make" />
       </div>

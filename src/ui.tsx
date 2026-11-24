@@ -17,6 +17,7 @@ const caminhos = {
   tesoura: <><circle cx="6" cy="6" r="2.8" /><circle cx="6" cy="18" r="2.8" /><path d="M8.2 7.8L20 19M8.2 16.2L20 5" /></>,
   batom: <><rect x="8" y="12" width="8" height="9" rx="1.5" /><path d="M9.5 12V8l5-3.5V12" /></>,
   olhar: <><path d="M2.5 14s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5z" /><circle cx="12" cy="14" r="2.5" /><path d="M5 6.5c4-2.5 10-2.5 14 0" /></>,
+  cilios: <path d="M3 9.5c3.8 5 14.2 5 18 0M7 13.2l-1.6 2.6M12 14.6v3.2M17 13.2l1.6 2.6" />,
   insta: <><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" /></>,
   mais: <path d="M12 5v14M5 12h14" />,
 }
