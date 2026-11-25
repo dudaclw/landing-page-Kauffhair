@@ -13,7 +13,10 @@ export function Rodape() {
         <a className={redondo} href={zap()} {...fora} aria-label="WhatsApp"><Icone nome="chat" className="size-5" /></a>
         <a className={redondo} href={INSTAGRAM} {...fora} aria-label="Instagram @kauffhair"><Icone nome="insta" className="size-5" /></a>
       </div>
-      <p className="text-xs text-tinta-2 md:order-2">© 2026 Kauffhair</p>
+      <p className="text-xs text-tinta-2 md:order-2">
+        © 2026 Kauffhair · feito com ❤️ por{' '}
+        <a href="https://www.instagram.com/duarda12th/" {...fora} className="underline-offset-2 hover:underline">@duarda12th</a>
+      </p>
     </footer>
   )
 }
