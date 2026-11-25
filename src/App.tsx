@@ -3,6 +3,8 @@ import { Topo } from './secoes/Topo'
 import { Abertura, Faixa } from './secoes/Abertura'
 import { Servicos } from './secoes/Servicos'
 import { Mechas } from './secoes/Mechas'
+import { Cortes } from './secoes/Cortes'
+import { Alisamentos } from './secoes/Alisamentos'
 import { Noivas } from './secoes/Noivas'
 import { Penteados } from './secoes/Penteados'
 import { Maquiagem } from './secoes/Maquiagem'
@@ -39,6 +41,8 @@ export default function App() {
         <Faixa />
         <Servicos />
         <Mechas />
+        <Cortes />
+        <Alisamentos />
         <Noivas />
         <Penteados />
         <Maquiagem />

@@ -12,6 +12,7 @@ const INTERESSE = {
   corte: 'por corte',
   sobrancelha: 'pelos serviços de sobrancelha e cílios com a Indianara',
   bronze: 'pelo Bronze Orgânico com a Indianara',
+  alisamento: 'pelo alisamento com a Mariza',
 }
 export type Chave = keyof typeof INTERESSE | 'duvida'
 
@@ -42,21 +43,24 @@ export const menu = [
   ['#sobre', 'Sobre'],
 ] as const
 
-export const faixa = ['Mechas personalizadas', 'Noivas', 'Penteados de festa', 'Maquiagem', 'Sobrancelhas e cílios', 'Bronzeamento orgânico', 'Cortes']
+export const faixa = ['Mechas personalizadas', 'Noivas', 'Penteados de festa', 'Maquiagem', 'Sobrancelhas e cílios', 'Bronzeamento orgânico', 'Cortes', 'Alisamentos']
 
 // Serviços com foto do trabalho. "posicao" escolhe que parte da foto aparece no recorte do card.
 export const servicos = [
-  { titulo: 'Mechas personalizadas', texto: 'Loiros exclusivos, iluminados e uniformes, do bege perolado ao platinado.', chave: 'mechas', ancora: '#mechas', foto: '/img/mechas-2.jpg', posicao: 'center 40%' },
+  { titulo: 'Mechas personalizadas', texto: 'Loiros exclusivos, iluminados e uniformes, do bege perolado ao platinado.', chave: 'mechas', ancora: '#mechas', foto: '/img/mechas-1.jpg', posicao: 'center 40%' },
   { titulo: 'Noivas', texto: 'Cabelo e maquiagem para o grande dia, com prova antes.', chave: 'noivas', ancora: '#noivas', foto: '/img/noiva-7.jpg', posicao: 'center 15%' },
   { titulo: 'Penteados', texto: 'Para formaturas, madrinhas, debutantes e festas.', chave: 'penteado', ancora: '#penteados', foto: '/img/penteado-1.jpg', posicao: 'center 85%' },
   { titulo: 'Maquiagem', texto: 'Com a Dyo e a Karina, em harmonia com o penteado.', chave: 'maquiagem', ancora: '#maquiagem', foto: '/img/maquiagem-1.jpg', posicao: 'center 30%' },
-  { titulo: 'Sobrancelhas e cílios', texto: 'Design, brow lamination, extensão de cílios e lash lifting com a Indianara.', chave: 'sobrancelha', ancora: '#sobrancelhas', foto: '/img/sobrancelha-2.jpg', posicao: '60% center' },
+  { titulo: 'Sobrancelhas e cílios', texto: 'Design, brow lamination, extensão de cílios e lash lifting com a Indianara.', chave: 'sobrancelha', ancora: '#sobrancelhas', foto: '/img/sobrancelha-4.jpg', posicao: 'center 35%' },
+  { titulo: 'Cortes', texto: 'Que valorizam o seu formato e a sua cor.', chave: 'corte', ancora: '#cortes', foto: '/img/corte-1.jpg', posicao: 'center 30%' },
 ] as const
 
-// Ainda sem foto: entram na mesma grade com um ícone no lugar da foto. Quando chegarem fotos, mover para a lista acima.
-export const outrosServicos = [
-  { titulo: 'Cortes', texto: 'Que valorizam o seu formato e a sua cor.', chave: 'corte', icone: 'tesoura' },
-] as const
+// Cortes feitos pela Vivi (galeria em Cortes)
+export const cortes = [
+  { foto: '/img/corte-1.jpg', alt: 'Cabelo longo e escuro com camadas e franja cortina, modelado com volume', posicao: 'center 30%' },
+  { foto: '/img/corte-2.jpg', alt: 'Corte médio em camadas, castanho com reflexos, visto de lado', posicao: 'center 40%' },
+  { foto: '/img/corte-3.jpg', alt: 'Corte médio repicado com camadas leves, visto de costas', posicao: 'center 45%' },
+]
 
 // Maquiadoras: cada uma com o retrato (cartão) e as próprias makes (galeria em Maquiagem)
 export const maquiadoras = [
