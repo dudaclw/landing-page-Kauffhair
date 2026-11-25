@@ -51,7 +51,7 @@ export const servicos = [
   { titulo: 'Noivas', texto: 'Cabelo e maquiagem para o grande dia, com prova antes.', chave: 'noivas', ancora: '#noivas', foto: '/img/noiva-7.jpg', posicao: 'center 15%' },
   { titulo: 'Penteados', texto: 'Para formaturas, madrinhas, debutantes e festas.', chave: 'penteado', ancora: '#penteados', foto: '/img/penteado-1.jpg', posicao: 'center 85%' },
   { titulo: 'Maquiagem', texto: 'Com a Dyo e a Karina, em harmonia com o penteado.', chave: 'maquiagem', ancora: '#maquiagem', foto: '/img/maquiagem-1.jpg', posicao: 'center 30%' },
-  { titulo: 'Sobrancelhas e cílios', texto: 'Design, brow lamination, extensão de cílios e lash lifting com a Indianara.', chave: 'sobrancelha', ancora: '#sobrancelhas', foto: '/img/sobrancelha-4.jpg', posicao: 'center 35%' },
+  { titulo: 'Sobrancelhas e cílios', texto: 'Design, brow lamination, extensão de cílios e lash lifting com a Indianara.', chave: 'sobrancelha', ancora: '#sobrancelhas', foto: '/img/sobrancelha-6.jpg', posicao: 'center' },
   { titulo: 'Cortes', texto: 'Que valorizam o seu formato e a sua cor.', chave: 'corte', ancora: '#cortes', foto: '/img/corte-1.jpg', posicao: 'center 30%' },
 ] as const
 
